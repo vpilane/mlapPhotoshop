@@ -1,0 +1,229 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+.split_left, .split_right {
+  position: fixed;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensures no overflow */
+}
+
+.split_left {
+  left: 0;
+  filter: sepia(0.7) contrast(0.85) brightness(0.95);
+  background-color: #bfa77a;
+}
+
+.split_right {
+  left: 50%;
+  filter: brightness(1.15) contrast(1.1) saturate(1.2);
+  background-color: #7399b6;
+  position: fixed;
+  overflow: hidden;
+}
+
+.overlay1, .overlay2 {
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 30, 10, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay1 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay2 {
+  position: relative; /* Needed for absolute positioning of desk-bottom */
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.desk-bottom {
+ margin-bottom: 140px;
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ height: 180px;
+ object-fit: contain;
+ z-index: 1;
+ pointer-events: none; /* This is important! */
+}
+
+h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.label {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-top:-280px;
+  margin-bottom: 140px; 
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  letter-spacing: 2px;
+}
+
+.left-content{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -70px;
+}
+.right-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -20px;
+}
+.pic-small {
+  height: 180px;
+  width: 140px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background: #fff2;
+}
+
+.pic-large {
+  height: 200px;
+  width: 300px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  background: #fff2;
+}
+
+.icon {
+  margin: 0 10px;
+  color: #2196f3;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.menu-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background: #fff; 
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+}
+
+.menu-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 32px;
+  display: flex;
+  gap: 32px;
+}
+
+.menu-bar li {
+  display: inline;
+}
+
+.menu-bar a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.menu-bar a:hover {
+  background: #2196f3;
+  color: #fff;
+}
+
+/* Add top padding to splits so content is not hidden under menu */
+.split_left, .split_right {
+  padding-top: 56px; /* Height of the menu bar */
+}
+
+.show-bottom-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  padding: 10px 24px;
+  font-size: 1.1em;
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s;
+}
+.show-bottom-btn:hover {
+  background: #1769aa;
+}
+.right-btn {
+  background: #43c465;
+  left: 50%;
+  bottom: 60px;
+}
+.right-btn:hover {
+  background: #2e8b4e;
+}
+.bottom-message {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  color: #222;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.13);
+  z-index: 20;
+}
+.right-message {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  transform: translateX(-50%);
+  z-index: 15;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Split Screen: 2000 vs Today</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <nav class="menu-bar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="split_left">
+    <div class="overlay1">
+      <div class="label">Year 2000</div>
+      <div class="left-content">
+        <img src="/media/crt moitor.jpeg" alt="CRT Monitor" class="pic-small">
+        <img src="/media/fax.jpeg" alt="Fax Machine" class="pic-small">
+        <img src="/media/flipphone.webp" alt="Flip Phone" class="pic-small">
+        <img src="/media/paperFiles.avif" alt="Paper Files" class="pic-small">
+      </div>
+      <img src="/media/oldDesk.png" alt="Old Desk" class="desk-bottom">
+      <button class="show-bottom-btn" onclick="showBottomMessage()">Show Info</button>
+      <div id="bottom-message" class="bottom-message" style="display: none;">
+        The Year 2000 office was tangible, disconnected, and space-consuming—a physical environment requiring multiple devices to do what a single laptop or smartphone can do today. It reflects an era where technology supported tasks, but had not yet transformed workflows the way cloud computing, AI, and mobile apps do now.
+      </div>
+    </div>
+  </div>
+
+  <div class="split_right">
+    <div class="overlay2">
+      <div class="label">Today</div>
+      <div class="right-content">
+        <i class="fa-solid fa-cloud fa-3x icon"></i>
+        <i class="fa-brands fa-slack fa-3x icon"></i>
+        <i class="fa-brands fa-zoom fa-3x icon"></i>
+        <i class="fa-solid fa-robot fa-3x icon"></i>
+        <img src="/media/lapt.webp" alt="Laptop" class="pic-small">
+        <img src="/media/smartphone.jpeg" alt="Smartphone" class="pic-small">
+      </div>
+      <img src="/media/moden Desk.png" alt="Modern Desk" class="desk-bottom">
+      <button class="show-bottom-btn right-btn" onclick="showRightMessage()">Show Modern Info</button>
+      <div id="right-bottom-message" class="bottom-message right-message" style="display: none;">
+        Today’s workspace is streamlined, intelligent, and borderless—a far cry from the clutter of the past. It represents a shift from physical tools to digital ecosystems, enabling people to work smarter, faster, and more collaboratively than ever before. This evolution supports remote work, agile teams, and innovation, making location and hardware almost irrelevant to productivity.
+      </div>
+    </div>
+  </div>
+  <script>
+  function showBottomMessage() {
+    const msg = document.getElementById('bottom-message');
+    msg.style.display = (msg.style.display === 'block') ? 'none' : 'block';
+  }
+  function showRightMessage() {
+    document.getElementById('right-bottom-message').style.display = 'block';
+  }
+  </script>
+</body>
+</html>
