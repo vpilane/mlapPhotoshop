@@ -61,12 +61,12 @@ body, html {
 }
 
 .desk-bottom {
- margin-bottom: 140px;
+ margin-bottom: 440px;
  position: absolute;
  left: 0;
  bottom: 0;
  width: 100%;
- height: 180px;
+ height: 480px;
  object-fit: contain;
  z-index: 1;
  pointer-events: none; /* This is important! */
